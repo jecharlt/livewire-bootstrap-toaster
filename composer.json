@@ -1,0 +1,82 @@
+{
+    "name": "jecharlt/livewire-bootstrap-toaster",
+    "description": "Toast Notifications for Laravel Livewire, AlpineJS, and Bootstrap",
+    "keywords": [
+        "jecharlt",
+        "laravel",
+        "livewire-bootstrap-toaster"
+    ],
+    "homepage": "https://github.com/jecharlt/livewire-bootstrap-toaster",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "jecharlt",
+            "email": "53029902b@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "spatie/laravel-package-tools": "^1.14.0",
+        "illuminate/contracts": "^10.0",
+        "livewire/livewire": "^3.0",
+        "laravel/framework": "^10.10"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.0",
+        "nunomaduro/collision": "^7.8",
+        "orchestra/testbench": "^8.8",
+        "pestphp/pest": "^2.20",
+        "pestphp/pest-plugin-arch": "^2.0",
+        "pestphp/pest-plugin-laravel": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Jecharlt\\LivewireBootstrapToaster\\": "src/",
+            "Jecharlt\\LivewireBootstrapToaster\\Database\\Factories\\": "database/factories/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Jecharlt\\LivewireBootstrapToaster\\Tests\\": "tests/",
+            "Workbench\\App\\": "workbench/app/"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": "@composer run prepare",
+        "clear": "@php vendor/bin/testbench package:purge-livewire-bootstrap-toaster --ansi",
+        "prepare": "@php vendor/bin/testbench package:discover --ansi",
+        "build": [
+            "@composer run prepare",
+            "@php vendor/bin/testbench workbench:build --ansi"
+        ],
+        "start": [
+            "Composer\\Config::disableProcessTimeout",
+            "@composer run build",
+            "@php vendor/bin/testbench serve"
+        ],
+        "analyse": "vendor/bin/phpstan analyse",
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage",
+        "format": "vendor/bin/pint"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Jecharlt\\LivewireBootstrapToaster\\LivewireBootstrapToasterServiceProvider"
+            ],
+            "aliases": {
+                "LivewireBootstrapToaster": "Jecharlt\\LivewireBootstrapToaster\\Facades\\LivewireBootstrapToaster"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
