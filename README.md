@@ -29,7 +29,7 @@ php artisan vendor:publish --tag="livewire-bootstrap-toaster-views"
 
     in your layout view
 
-2.  Call $this->notify("message", "title", "type")
+2.  Call $this->toast("message", "title", "type")
     - both message and title are user-defined and optional
     - supported types: success, error, info, warning 
 ```

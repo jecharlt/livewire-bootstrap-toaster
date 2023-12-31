@@ -26,7 +26,7 @@ class LivewireBootstrapToasterServiceProvider extends PackageServiceProvider
 
     public function boot(): void
     {
-        Component::macro('notify', function ($message, $title = '', $type = 'success') {
+        Component::macro('toast', function ($message, $title = '', $type = 'success') {
             $this->dispatch('notify', message: $message, title: $title, type: $type);
         });
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'livewire-bootstrap-toaster');
