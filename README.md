@@ -18,21 +18,20 @@ php artisan vendor:publish --tag="livewire-bootstrap-toaster-views"
 
 ## Usage
 
+1. Include the following in your layout view
 ```php
-1.  Include 
-
-    <x-livewire-bootstrap-toaster::toast/> 
-
-    or 
-
-    @include("livewire-bootstrap-toaster::components.toast") 
-
-    in your layout view
-
-2.  Call $this->toast("message", "title", "type")
-    - both message and title are user-defined and optional
-    - supported types: success, error, info, warning 
+<x-livewire-bootstrap-toaster::toast/> 
 ```
+
+2. To trigger a toast notification, use the following command in your Livewire component
+    - Note: both the message and title are user-defined and optional and supported types include: success, error, 
+      info, warning
+
+```php
+$this->toast("message", "title", "type")
+```
+
+
 
 ## Security Vulnerabilities
 
