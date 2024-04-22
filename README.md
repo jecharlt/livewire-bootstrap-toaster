@@ -24,8 +24,10 @@ php artisan vendor:publish --tag="livewire-bootstrap-toaster-views"
 ```
 
 2. To trigger a toast notification, use the following command in your Livewire component
-    - Note: both the message and title are user-defined and optional. Type supported types include: success, error, 
-      info, warning
+    - Note:
+       - Both the message and title are user-defined and optional
+       - Type supported types include: success, error, 
+         info, warning
 
 ```php
 $this->toast("message", "title", "type")
